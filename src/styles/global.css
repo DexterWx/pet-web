@@ -1,0 +1,187 @@
+/* 全局基础样式
+   品牌设计令牌：与 pet-mini/assets/styles/theme.wxss 同名同值，保证两端统一视觉语言。
+   视觉基调：熊猫配色 —— 奶白底 + 黑边 + 纯黑强调。
+   后台定位专业高效：同一套黑白令牌，靠描边与留白立形，不做“宠物风”装饰。 */
+:root {
+  /* 品牌令牌（与小程序 theme.wxss 对齐） */
+  --brand-primary: #1f1d1b;
+  --brand-primary-deep: #0e0d0c;
+  --brand-primary-light: #f1ece2;
+  --brand-accent: #45403a;
+  --brand-success: #4f6b4f;
+  --brand-warning: #a8863c;
+  --brand-error: #8e3b2e;
+  --brand-text: #1f1d1b;
+  --brand-text-sub: #8b857c;
+  --brand-bg: #fbf9f4;
+  --brand-bg-soft: #f3efe6;
+  --brand-cream: #fffdf8;
+  --brand-border: #e7e1d6;
+  --brand-edge: #1f1d1b; /* 黑边：卡片 / 入口描边，熊猫风格的核心 */
+
+  /* Element Plus 主题定制：主色换成熊猫黑，语义色低饱和对齐色板 */
+  --el-color-primary: #1f1d1b;
+  --el-color-primary-rgb: 31, 29, 27; /* 半透明 hover/focus 态依赖此值，不改会透出默认蓝 */
+  --el-color-primary-light-3: #62615f;
+  --el-color-primary-light-5: #8f8e8d;
+  --el-color-primary-light-7: #bcbbbb;
+  --el-color-primary-light-8: #d2d2d1;
+  --el-color-primary-light-9: #e9e8e8;
+  --el-color-primary-dark-2: #191716;
+  --el-color-success: #4f6b4f;
+  --el-color-success-rgb: 79, 107, 79;
+  --el-color-success-light-3: #849784;
+  --el-color-success-light-5: #a7b5a7;
+  --el-color-success-light-7: #cad3ca;
+  --el-color-success-light-8: #dce1dc;
+  --el-color-success-light-9: #eef1ee;
+  --el-color-success-dark-2: #3f563f;
+  --el-color-warning: #a8863c;
+  --el-color-warning-rgb: 168, 134, 60;
+  --el-color-warning-light-3: #c2aa77;
+  --el-color-warning-light-5: #d4c39e;
+  --el-color-warning-light-7: #e5dbc5;
+  --el-color-warning-light-8: #eee7d8;
+  --el-color-warning-light-9: #f7f1e5;
+  --el-color-warning-dark-2: #866b30;
+  --el-color-danger: #8e3b2e;
+  --el-color-danger-rgb: 142, 59, 46;
+  --el-color-danger-light-3: #b0766d;
+  --el-color-danger-light-5: #c79d97;
+  --el-color-danger-light-7: #ddc4c0;
+  --el-color-danger-light-8: #e9d8d5;
+  --el-color-danger-light-9: #f5ecea;
+  --el-color-danger-dark-2: #722f25;
+  --el-color-error: #8e3b2e;
+  --el-color-error-rgb: 142, 59, 46;
+  --el-color-error-light-3: #b0766d;
+  --el-color-error-light-5: #c79d97;
+  --el-color-error-light-7: #ddc4c0;
+  --el-color-error-light-8: #e9d8d5;
+  --el-color-error-light-9: #f5ecea;
+  --el-color-error-dark-2: #722f25;
+  --el-color-info: #8b857c;
+  --el-color-info-rgb: 139, 133, 124;
+  --el-color-info-light-3: #aeaaa3;
+  --el-color-info-light-5: #c5c2be;
+  --el-color-info-light-7: #dcdad8;
+  --el-color-info-light-8: #e8e7e5;
+  --el-color-info-light-9: #f1f0ee;
+  --el-color-info-dark-2: #6f6a63;
+  --el-rate-fill-color: #a8863c;
+
+  /* 文本 / 边框 / 背景：黑白 + 奶白系 */
+  --el-text-color-primary: #1f1d1b;
+  --el-text-color-regular: #45403a;
+  --el-text-color-secondary: #8b857c;
+  --el-text-color-placeholder: #b3aca0;
+  --el-border-color: #e7e1d6;
+  --el-border-color-light: #ece7dd;
+  --el-border-color-lighter: #f1ece4;
+  --el-border-color-extra-light: #f6f2ec;
+  --el-fill-color: #f3efe6;
+  --el-fill-color-blank: #ffffff;
+  --el-fill-color-light: #fbf9f4;
+  --el-fill-color-lighter: #fdfcf9;
+  --el-fill-color-extra-light: #fefdfa;
+  --el-fill-color-dark: #eae4d8;
+  --el-fill-color-darker: #e2dbcc;
+  --el-bg-color: #ffffff;
+  --el-bg-color-page: #fbf9f4;
+  --el-bg-color-overlay: #ffffff;
+
+  /* 圆角与阴影：熊猫靠描边立形，阴影极轻 */
+  --el-border-radius-base: 8px;
+  --el-border-radius-small: 6px;
+  --brand-shadow-card: 0 1px 4px rgba(31, 29, 27, 0.04);
+  --brand-radius-card: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  color: var(--brand-text);
+  background: var(--brand-bg);
+}
+
+/* 通用页面容器 */
+.page {
+  padding: 16px;
+}
+
+.page-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.page-toolbar .spacer {
+  flex: 1;
+}
+
+.pager {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+/* 金额强调色：熊猫黑（与小程序价格同色，跨端一致） */
+.price {
+  color: var(--brand-primary);
+  font-weight: 600;
+}
+
+.text-muted {
+  color: var(--brand-text-sub);
+}
+
+/* 表格统一语言：白底 + 黑框（与小程序卡片描边一致），内部细线保持奶白阶 */
+.el-table {
+  border: 1px solid var(--brand-edge);
+  border-radius: var(--brand-radius-card);
+  overflow: hidden;
+}
+
+.el-table__inner-wrapper::before {
+  background-color: var(--brand-edge);
+}
+
+/* 卡片统一语言：白底 + 黑边（熊猫核心），阴影极轻 */
+.el-card {
+  border-radius: var(--brand-radius-card);
+  border: 1px solid var(--brand-edge);
+  box-shadow: var(--brand-shadow-card) !important;
+}
+
+/* 主按钮：熊猫黑 */
+.el-button--primary {
+  font-weight: 600;
+}
+
+/* 表格/弹层圆角柔和化 */
+.el-dialog {
+  border-radius: var(--brand-radius-card);
+}
+
+/* 空状态文案随品牌中性色（插画保持 Element 默认灰，不干扰视觉） */
+.el-empty__description {
+  color: var(--brand-text-sub);
+}
+
+.el-drawer__body {
+  color: var(--brand-text);
+}
